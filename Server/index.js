@@ -16,7 +16,7 @@ const server = http.createServer(app);
 // Middleware
 app.use(
   cors({
-    origin: "https://chat-app-client-phi-six.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -27,7 +27,7 @@ app.use(express.json({ limit: "50mb" }));
 // Socket.IO
 export const io = new Server(server, {
   cors: {
-    origin: "https://chat-app-client-phi-six.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   },
